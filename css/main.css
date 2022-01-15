@@ -263,6 +263,12 @@ header .search-logo i {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  transition: 200ms linear;
+}
+.landing i:hover {
+  cursor: pointer;
+  color: var(--main-color);
+  filter: brightness(120%) hue-rotate(30deg) opacity(.8);
 }
 @media (max-width: 767px) {
   .landing i {
@@ -395,9 +401,11 @@ header .search-logo i {
   padding: .6rem;
   font-size: 1.05em;
 }
+.portoflio .port-li:hover,
 .portoflio .port-li.active {
   background-color: var(--main-color);
   color: white;
+  cursor: pointer;
 }
 .portoflio .imgs-container {
   display: flex;
@@ -458,6 +466,10 @@ header .search-logo i {
   text-transform: uppercase;
   padding: .9rem;
   color: #fff;
+  transition: 200ms;
+}
+.portoflio .more-imgs a:hover {
+  transform: scale(1.05);
 }
 .portoflio .video {
   position: relative;
@@ -500,6 +512,10 @@ header .search-logo i {
   color: #fff;
   background-color: #000;
   border: 0;
+}
+.portoflio .video button:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
 }
 /* End Portoflio */
 /* Start about us */
@@ -799,11 +815,21 @@ header .search-logo i {
 }
 
 .pricing .card input { 
+  position: relative;
   background-color: #fff;
   margin-top: 2rem;
   border: 1px solid var(--main-color);
   padding: 1rem 2rem;
   text-transform: capitalize;
+  transition: 300ms cubic-bezier(0, 0, 0.85, 1.18);
+}
+.pricing .card input:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: white;
+}
+.pricing .card input:active {
+  color: red;
 }
 .pricing .footer {
   position: relative;
@@ -820,12 +846,10 @@ header .search-logo i {
   padding: .8rem 2rem;
   color: #fff;
   background-color: var(--main-color);
+  transition: 300ms;
 }
-.pricing .card input:hover {
-  cursor: pointer;
-}
-.pricing .card input:active {
-  color: red;
+.pricing .footer a:hover {
+  opacity: 0.6;
 }
 /* email section */
 .pricing .email {
@@ -869,11 +893,33 @@ header .search-logo i {
   text-transform: capitalize;
 }
 .pricing .email a {
+  position: relative;
   display: inline-block;
   text-transform: uppercase;
   padding: 1rem;
   color: #fff;
   background-color: var(--main-color);
+}
+.pricing .email a:hover {
+  color: var(--main-color);
+}
+.pricing .email a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: white;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+}
+.pricing .email a:hover,
+.pricing .email a:hover::before {
+  transition: 200ms linear;
+  mix-blend-mode: screen;
+}
+.pricing .email a:hover::before {
+  width: 100%;
 }
 .pricing .email .text {
   flex: 1;
@@ -930,6 +976,14 @@ header .search-logo i {
   background-color: var(--main-color);
   border: 0;
   margin-left: auto;
+  transition: 300ms linear;
+}
+.contact form input[type = "button"]:hover {
+  cursor: pointer;
+  transform: scale(1.02 );
+  background-color: var(--white-color);
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
 }
 .contact .info {
   display: flex ;
@@ -1005,6 +1059,10 @@ footer .content ul {
   display: flex;
   justify-content: center;
   gap: 2rem;
+}
+footer .content ul li:hover {
+  cursor: pointer;
+  color: var(--main-color);
 }
 footer .copyright {
   font-size: 1.05em;
